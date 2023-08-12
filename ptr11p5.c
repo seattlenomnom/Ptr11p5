@@ -25,7 +25,7 @@ struct entry{
 
 /* function declarations */
 
-void printList(struct entry *p2list);
+void printList(struct entry *p2head);
 
 
 /* main */
@@ -65,7 +65,9 @@ int main(int argc, char *argv[]) {
     n5.prev = &n4;
 
 
+/* print out the list forward */
 
+    printList(p2head);
 
 
 
@@ -79,7 +81,7 @@ int main(int argc, char *argv[]) {
 
 /* function defiinitions */
 
-void printList(struct entry *p2list){
+void printList(struct entry *p2head){
 
 
 
