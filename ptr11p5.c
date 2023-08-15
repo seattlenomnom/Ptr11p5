@@ -10,7 +10,7 @@
 #include <stdio.h>
 
 /* defines */
-
+#define NIX (struct entry *) 0
 
 
 /* data definitions */
@@ -50,7 +50,7 @@ int main(int argc, char *argv[]) {
 
 
     n1.next = &n2;
-    n1.prev = &n5;
+    n1.prev = NIX;
 
     n2.next = &n3;
     n2.prev = &n1;
@@ -61,7 +61,7 @@ int main(int argc, char *argv[]) {
     n4.next = &n5;
     n4.prev = &n3;
 
-    n5.next = &n1;
+    n5.next = NIX;
     n5.prev = &n4;
 
 
@@ -83,14 +83,14 @@ int main(int argc, char *argv[]) {
 
 void printList(struct entry *p2head){
 
+    struct entry *theEntry;
 
-
-
-
-
-
-
-
+    theEntry = p2head;
+    while(theEntry != NIX) {
+        printf("%i ", theEntry->value);
+        theEntry = theEntry->next;
+    }
+    printf("\n");
 
 
 }
